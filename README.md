@@ -1,4 +1,4 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/jjmengze/heroku-go)]
+![Go Report Card](https://goreportcard.com/badge/github.com/jjmengze/heroku-go)
 
 # heroku-go
 This is very simple web server in golang ,it will show that heroku open port for this application. 
