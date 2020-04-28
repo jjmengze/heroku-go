@@ -27,3 +27,20 @@ jobs:
 
     - name: Test
       run: go test -v .
+
+  push:
+    name: Push
+    runs-on: ubuntu-latest
+    steps:
+    - name: Login to Heroku Container registry
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:login 
+
+#  deploy:
+#    name: Deploy
+#    runs-on: ubuntu-latest
+#    - name: Login to Heroku Container registry
+#      env: 
+#        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#      run: heroku container:login 
