@@ -40,7 +40,7 @@ jobs:
       run: heroku container:login 
       
     - name: Push to Heroku
-      run: git push -f https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/${{ env.APP_NAME }}.git origin/master:master
+      run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ env.APP_NAME }}.git origin/master:master
 
 #  deploy:
 #    name: Deploy
