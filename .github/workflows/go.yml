@@ -5,6 +5,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+env:
+  APP_NAME: "awesome-jason"
 
 jobs:
 
@@ -36,6 +38,9 @@ jobs:
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login 
+      
+    - name: Push to Heroku
+      run: git push -f https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/${{ env.HEROKU_APP_STAGING }}.git origin/master:master
 
 #  deploy:
 #    name: Deploy
